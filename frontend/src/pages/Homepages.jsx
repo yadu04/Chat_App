@@ -9,23 +9,23 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom"; // ✅ FIXED
-import Login from "../components/Authentication/Login.jsx";
-import Signup from "../components/Authentication/Signup.jsx";
+import { useNavigate } from "react-router-dom"; // ✅ React Router v6
+import Login from "../components/Authentication/Login";
+import Signup from "../components/Authentication/Signup";
 
-function Homepages() {
-  const navigate = useNavigate(); // ✅ FIXED
+function Homepage() {
+  const navigate = useNavigate();
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("userInfo"));
 
-    if (user) navigate("/chats"); // ✅ FIXED
+    if (user) navigate("/chats");
   }, [navigate]);
 
   return (
     <Container maxW="xl" centerContent>
       <Box
-        d="flex"
+        display="flex" // ✅ replaced d="flex"
         justifyContent="center"
         p={3}
         bg="white"
@@ -34,7 +34,7 @@ function Homepages() {
         borderRadius="lg"
         borderWidth="1px"
       >
-        <Text fontSize="4xl" fontFamily="Work sans">
+        <Text fontSize="4xl" fontFamily="Work Sans">
           Talk-A-Tive
         </Text>
       </Box>
@@ -58,4 +58,4 @@ function Homepages() {
   );
 }
 
-export default Homepages;
+export default Homepage;
