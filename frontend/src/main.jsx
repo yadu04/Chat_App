@@ -8,12 +8,11 @@ import ChatProvider from "./Context/ChatProvider";
 
 
 createRoot(document.getElementById("root")).render(
- 
+  <ChakraProvider>
     <BrowserRouter>
-      <ChakraProvider>
-        <ChatProvider>
-          <App />
-        </ChatProvider>
-      </ChakraProvider>
+      <ChatProvider>
+        <App />
+      </ChatProvider>
     </BrowserRouter>
+  </ChakraProvider>
 );
